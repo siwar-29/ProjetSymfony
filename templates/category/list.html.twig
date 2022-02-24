@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+    {% block body %}
+    <br></br>
+      <div style="text-align: center;" class="table-responsive-xl">
+            <table style="width:90%" class="table table-striped table-hover ">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for cat in categories %}
+                    <tr>
+                     <td>{{cat.id}}</td>
+                    <td>{{cat.title}}</td>
+                    <td>{{cat.description}}</td>
+                    <td>
+                    <a class="btn btn-outline-success" href="{{path("editCategory",{'id':cat.id})}}"> modifier </a>
+                    <a class="btn btn-outline-danger" href="{{path("deleteCategory",{'id':cat.id})}}"> supprimer </a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+      </div>
+        {% endblock  %}

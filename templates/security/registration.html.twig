@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <h1>User registration</h1>
+        {{form_start(form)}}
+                {{form_row(form.email,{'attr':{'class':'form-control'}})}}<br>
+                {{form_row(form.password.first,{'attr':{'class':'form-control'}})}}<br>
+                {{form_row(form.password.second,{'attr':{'class':'form-control'}})}}<br>
+                         
+        <button type="submit" class="btn btn-success">Sign up</button>
+        {{form_end(form)}}
+{% endblock  %}
